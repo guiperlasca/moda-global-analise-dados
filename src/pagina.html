@@ -1,0 +1,435 @@
+<title>Moda Global · 2.250 pedidos em decisões</title>
+<style>/*@@CSS@@*/</style>
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('mg-reduzir')==='1')document.documentElement.classList.add('reduzir')}catch(e){}</script>
+
+<header class="topo escuro" id="topo">
+  <div class="cont topo-in">
+    <a class="marca" href="#abertura"><i aria-hidden="true"></i>Moda Global</a>
+    <button class="bt-p bt-menu" id="bt-menu" type="button" aria-expanded="false" aria-controls="nav">Capítulos</button>
+    <nav class="nav" id="nav" aria-label="Capítulos" data-aberto="false">
+      <ol>
+        <li><a href="#tempo">Tempo</a></li>
+        <li><a href="#mercados">Mercados</a></li>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#limites">Limites</a></li>
+        <li><a href="#previsao">Previsão</a></li>
+        <li><a href="#explorar" class="nav-explorar">Explorar dados</a></li>
+        <li><a href="#decisoes">Decisões</a></li>
+      </ol>
+    </nav>
+    <div class="topo-acoes">
+      <button class="bt-p bt-reduzir" id="bt-reduzir" type="button" aria-pressed="false">Reduzir animações</button>
+      <button class="bt-p" id="bt-apresentar" type="button" aria-pressed="false">Apresentar</button>
+    </div>
+  </div>
+  <div class="progresso" id="progresso" aria-hidden="true"></div>
+</header>
+
+<main id="conteudo">
+
+<!-- ============ ABERTURA ============ -->
+<section class="abertura" id="abertura" data-cap="abertura" data-escuro aria-labelledby="h-abertura">
+  <div class="cont">
+    <div class="ab-grid">
+      <div data-ponto>
+        <p class="ab-sup ent" style="--d:0">Moda Global · fast fashion na América Latina · 2023–2024</p>
+        <h1 id="h-abertura" class="ent" style="--d:1" tabindex="-1">Como transformar <em>2.250 pedidos</em> em decisões?</h1>
+        <p class="ab-lead ent" style="--d:2">Analisamos as vendas de dois anos em seis mercados para responder onde a empresa cresce, o que acompanhar mais de perto e como planejar os três meses seguintes.</p>
+        <ul class="ab-numeros ent" style="--d:3" id="ab-numeros" aria-label="Números-chave. Escolha um para ver o detalhe e mudar a fita de meses">
+          <li><button class="ab-num" type="button" data-m="fat" aria-pressed="true" aria-controls="ab-det"><span class="r">de faturamento acumulado <span class="sr-only">(<span data-n="tot.fatExato">R$ 6.230.296,22</span>)</span></span><span class="v" data-n="tot.fatMi">R$ 6,23 mi</span></button></li>
+          <li><button class="ab-num" type="button" data-m="pedidos" aria-pressed="false" aria-controls="ab-det"><span class="r">pedidos</span><span class="v" data-n="tot.pedidos">2.250</span></button></li>
+          <li><button class="ab-num" type="button" data-m="unidades" aria-pressed="false" aria-controls="ab-det"><span class="r">unidades vendidas</span><span class="v" data-n="tot.unidades">56.782</span></button></li>
+          <li><button class="ab-num" type="button" data-m="seg" aria-pressed="false" aria-controls="ab-det"><span class="r">mercados · categorias</span><span class="v">6 · 5</span></button></li>
+        </ul>
+        <p class="ab-det" id="ab-det" aria-live="polite"></p>
+      </div>
+      <figure class="ab-foto ent" style="--d:2">
+        <img src="@@IMG:arara@@" alt="Arara com vestidos e blusas em tons claros" width="900" height="1350" decoding="async">
+        <figcaption>Imagem ilustrativa</figcaption>
+      </figure>
+    </div>
+    <div class="fita" id="fita" role="group" aria-label="Faturamento mensal de janeiro de 2023 a dezembro de 2024, em 24 barras a partir de zero. Use as setas para percorrer os meses."></div>
+    <div class="fita-leg"><span><i style="background:var(--petroleo-claro)"></i>2023</span><span><i style="background:var(--coral)"></i>2024</span><span class="dica-uso">Passe o mouse, toque ou use as setas em cada mês</span><span id="fita-leg-txt">Cada barra é o faturamento de um mês, a partir de zero</span></div>
+    <div class="ab-rodape">
+      <a class="ab-cta" href="#tempo">Acompanhar a análise <span aria-hidden="true">↓</span></a>
+      <p class="ab-credito">Trabalho acadêmico · UniRitter · Análise de Dados e Big Data · 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEMPO ============ -->
+<section class="cap cap-claro" id="tempo" data-cap="tempo" aria-labelledby="h-tempo">
+  <div class="cont">
+    <header class="cap-cab" data-revela data-ponto>
+      <p class="cap-id">Desempenho e tempo · análise exploratória e descritiva</p>
+      <h2 id="h-tempo">A receita cresceu. <span class="seg-linha">Os picos mudaram de mês.</span></h2>
+      <p class="cap-lead">O crescimento foi uniforme ao longo do ano? A comparação mês a mês mostra que não.</p>
+    </header>
+    <div class="scrolly" id="sc-tempo">
+      <figure class="scrolly-graf" style="margin:0">
+        <div class="graf-cab">
+          <p class="graf-tit" id="tempo-tit">Faturamento mensal<small>R$ · 2023 e 2024 · escala a partir de R$ 150 mil</small></p>
+          <div class="seg" id="sel-tempo" role="group" aria-label="Medida do gráfico">
+            <button type="button" data-v="centavos" aria-pressed="true">Faturamento</button>
+            <button type="button" data-v="unidades" aria-pressed="false">Unidades</button>
+          </div>
+        </div>
+        <ul class="legenda"><li><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#26756F" stroke-width="3"/></svg>2023</li><li><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#FF6B42" stroke-width="3.5"/></svg>2024</li></ul>
+        <div class="graf" id="g-tempo" role="img"></div>
+        <p class="graf-sintese" id="tempo-sintese" aria-live="polite"></p>
+      </figure>
+      <div class="scrolly-passos">
+        <article class="passo" data-passo="0" data-ponto>
+          <span class="passo-n">1 de 3 · Panorama</span>
+          <h3>2024 vendeu mais em receita, pedidos e unidades</h3>
+          <p>O faturamento chegou a <b class="d" data-n="ano24.fat">R$ 3.264.702,75</b>, <b data-n="cresc.receita">+10,09%</b> sobre os <span data-n="ano23.fat">R$ 2.965.593,47</span> de 2023. Pedidos cresceram <b data-n="cresc.pedidos">+5,67%</b> e unidades, <b data-n="cresc.unidades">+7,53%</b>.</p>
+        </article>
+        <article class="passo" data-passo="1" data-ponto>
+          <span class="passo-n">2 de 3 · Picos</span>
+          <h3>Os meses mais fortes não coincidem</h3>
+          <p>No faturamento, o pico de 2023 foi <b class="d">julho</b> (<span data-n="pico23">R$ 304.828,81</span>); o de 2024, <b class="d">junho</b> (<span data-n="pico24">R$ 329.170,99</span>). Junho de 2024 ficou <b data-n="junho">+60,72%</b> acima de junho de 2023.</p>
+        </article>
+        <article class="passo" data-passo="2" data-ponto>
+          <span class="passo-n">3 de 3 · Interpretação</span>
+          <h3>Dois anos não comprovam sazonalidade</h3>
+          <p>Com só dois ciclos e picos em meses diferentes, não há evidência suficiente de um padrão que se repete. A correlação entre os perfis mensais é de cerca de <b data-n="corr">−0,15</b>. A base não registra campanhas ou datas comerciais, então não atribuímos causa aos picos.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MERCADOS ============ -->
+<section class="cap cap-escuro" id="mercados" data-cap="mercados" data-escuro aria-labelledby="h-mercados">
+  <div class="cont">
+    <header class="cap-cab" data-revela data-ponto>
+      <p class="cap-id">Mercados · exploratória, descritiva e preditiva</p>
+      <h2 id="h-mercados">O líder muda <span class="seg-linha">quando a pergunta muda.</span></h2>
+      <p class="cap-lead">Volume, valor por pedido e crescimento apontam países diferentes. A expansão depende de olhar os três.</p>
+    </header>
+    <div class="scrolly" id="sc-mercados">
+      <figure class="scrolly-graf" style="margin:0">
+        <div class="graf-cab">
+          <p class="graf-tit" id="merc-tit">Pedidos<small id="merc-sub">Acumulado de 2023–2024</small></p>
+          <span class="chip-ind" id="merc-chip">Pedidos · 2023–2024</span>
+        </div>
+        <div class="seg" id="sel-merc" role="group" aria-label="Métrica do ranking" style="margin-bottom:1rem">
+          <button type="button" data-v="pedidos" aria-pressed="true">Pedidos</button>
+          <button type="button" data-v="receita" aria-pressed="false">Faturamento</button>
+          <button type="button" data-v="ticket" aria-pressed="false">Ticket médio</button>
+          <button type="button" data-v="cresc" aria-pressed="false">Crescimento</button>
+          <button type="button" data-v="receita24" aria-pressed="false">Receita 2024</button>
+        </div>
+        <p class="dica-uso" style="margin:0 0 .6rem">Passe o mouse, toque ou use Tab em um país para ver todos os indicadores</p>
+        <div class="rk" id="rk">
+          <div class="rk-eixo" id="rk-eixo"></div>
+          <ul class="rk-lista" id="rk-lista"></ul>
+        </div>
+        <p class="graf-sintese" id="merc-sintese" aria-live="polite"></p>
+      </figure>
+      <div class="scrolly-passos">
+        <article class="passo" data-passo="0" data-ponto>
+          <span class="passo-n">1 de 4 · Volume</span>
+          <h3>Brasil lidera em pedidos</h3>
+          <p><b class="d" data-n="m.brasil.pedidos">395 pedidos</b>, 17,56% do total. A distância para o Chile, último no volume, é de 37 pedidos: a distribuição é próxima.</p>
+        </article>
+        <article class="passo" data-passo="1" data-ponto>
+          <span class="passo-n">2 de 4 · Faturamento</span>
+          <h3>Brasil também lidera o faturamento acumulado</h3>
+          <p><b class="d" data-n="m.brasil.receita">R$ 1.105.260,26</b> em 2023–2024. Faturamento é receita registrada: sem custos e despesas, não indica lucro.</p>
+        </article>
+        <article class="passo" data-passo="2" data-ponto>
+          <span class="passo-n">3 de 4 · Valor por pedido</span>
+          <h3>Chile tem menos pedidos e o maior ticket</h3>
+          <p>Cada pedido chileno vale, em média, <b class="d" data-n="m.chile.ticket">R$ 3.016,67</b>. Ticket = faturamento do país ÷ pedidos do país.</p>
+        </article>
+        <article class="passo" data-passo="3" data-ponto>
+          <span class="passo-n">4 de 4 · Crescimento</span>
+          <h3>Em 2024, a ordem muda de novo</h3>
+          <p>Colômbia cresce mais: <b class="d" data-n="m.colombia.cresc">+21,37%</b> na receita e <span data-n="m.colombia.crescU">+19,05%</span> nas unidades. Argentina (<span data-n="m.argentina.cresc">+19,10%</span>) e Chile (<span data-n="m.chile.cresc">+14,67%</span>) vêm a seguir. O período agora é 2024 contra 2023.</p>
+        </article>
+      </div>
+    </div>
+    <div class="conclusao" data-revela data-ponto id="merc-conclusao">
+      <div>
+        <h3><em>Chile e Colômbia</em> são prioridades para testar expansão.</h3>
+        <ul class="motivos">
+          <li><b>Chile</b><span>Maior receita de 2024 (<span data-n="m.chile.receita24">R$ 576.887,62</span>) e maior ticket acumulado.</span></li>
+          <li><b>Colômbia</b><span>Maior crescimento de receita e de unidades em 2024.</span></li>
+          <li class="seg2"><b>Argentina, depois</b><span>Cresce bem (+19,10%), mas tem o menor ticket e a 5ª receita de 2024.</span></li>
+        </ul>
+      </div>
+      <div class="mapa-mini"><svg id="mapa" role="group" aria-label="Mapa da América Latina com Chile e Colômbia destacados como prioridades e Argentina como segunda prioridade. Cada mercado pode ser selecionado para ver seus números."></svg><p class="dica-uso">Toque ou passe o mouse em um país</p></div>
+      <p class="nota-piloto">Recomendação de piloto: um teste com prazo, escopo e critérios definidos antes, medindo margem e capacidade logística. Não é promessa de lucro. México cresce em unidades (+16,44%) mais que em receita (+4,12%); Brasil e Peru perdem unidades.</p>
+    </div>
+    <details class="det">
+      <summary>Tabela completa dos mercados</summary>
+      <div class="det-corpo">
+        <div class="tabela" id="tab-merc"></div>
+        <p>Média mensal = faturamento acumulado ÷ 24 meses. Não confundir com ticket médio. Valores nominais em reais, sem conversão cambial.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CATEGORIAS ============ -->
+<section class="cap cap-claro" id="categorias" data-cap="categorias" aria-labelledby="h-categorias">
+  <div class="cont">
+    <header class="cap-cab" data-revela data-ponto>
+      <p class="cap-id">Categorias · descritiva e preditiva</p>
+      <h2 id="h-categorias">A liderança acumulada <span class="seg-linha">não conta toda a história.</span></h2>
+      <p class="cap-lead">Acessórios lidera os três totais. A distribuição dos pedidos, porém, é equilibrada: de 18,80% a 20,84% por categoria.</p>
+    </header>
+    <div class="trio-cab">
+      <div class="seg" id="sel-trio" role="group" aria-label="Mostrar nos três totais">
+        <button type="button" data-v="pct" aria-pressed="true">Participação</button>
+        <button type="button" data-v="abs" aria-pressed="false">Valores absolutos</button>
+      </div>
+      <span class="dica-uso">Passe o mouse ou toque em uma categoria para comparar as três medidas</span>
+    </div>
+    <div class="trio" id="trio" data-revela></div>
+    <div class="scrolly" id="sc-categorias">
+      <figure class="scrolly-graf" style="margin:0">
+        <div class="graf-cab">
+          <p class="graf-tit">Variação das unidades<small>Mesma escala nos dois painéis, de −20% a +40%, com zero marcado</small></p>
+        </div>
+        <div class="dv" id="dv" data-revela></div>
+        <div class="cat-det" id="cat-det" hidden aria-live="polite"></div>
+        <p class="graf-sintese">Clique em uma categoria para ver os números completos.</p>
+      </figure>
+      <div class="scrolly-passos">
+        <article class="passo" data-passo="0" data-ponto>
+          <span class="passo-n">1 de 3 · Crescem</span>
+          <h3>Moda Feminina e Calçados sobem nas duas janelas</h3>
+          <p>No ano, <b class="d">+21,67%</b> e <b class="d">+12,99%</b> em unidades. No trimestre recente, <b class="d">+27,75%</b> e <b class="d">+32,28%</b>.</p>
+        </article>
+        <article class="passo" data-passo="1" data-ponto>
+          <span class="passo-n">2 de 3 · Recuam</span>
+          <h3>Acessórios lidera, mas recua no fim de 2024</h3>
+          <p>As unidades caíram <b class="d">18,86%</b> do T3 para o T4. Moda Infantil ficou estável no ano (+0,56%) e também caiu no trimestre (−11,24%).</p>
+        </article>
+        <article class="passo" data-passo="2" data-ponto>
+          <span class="passo-n">3 de 3 · Sinal misto</span>
+          <h3>Moda Masculina cai no ano e se recupera no fim</h3>
+          <p><b class="d">−8,19%</b> no ano e <b class="d">+39,57%</b> no trimestre recente. O sinal misto pede investigação por produto antes de cortes amplos.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<figure class="faixa-foto">
+  <img src="@@IMG:tecidos@@" alt="Pilhas de tecidos coloridos dobrados" width="640" height="427" loading="lazy" decoding="async">
+  <figcaption>Imagem ilustrativa</figcaption>
+</figure>
+
+<!-- ============ LIMITES ============ -->
+<section class="cap cap-claro" id="limites" data-cap="limites" aria-labelledby="h-limites">
+  <div class="cont">
+    <header class="cap-cab" data-revela data-ponto>
+      <p class="cap-id">Estoque e limites · descritiva</p>
+      <h2 id="h-limites">O que podemos afirmar. <span class="seg-linha">E o que ainda não.</span></h2>
+      <p class="cap-lead">Duas perguntas da avaliação não têm resposta completa nesta base. Explicar o porquê também é resultado.</p>
+    </header>
+    <div class="lim-grid">
+      <div class="lim-lucro" data-revela>
+        <p class="pergunta">Qual é o mercado mais lucrativo?</p>
+        <p class="resposta">Não dá para saber sem custos e despesas.</p>
+        <p class="lim-texto">Brasil lidera o faturamento acumulado. Isso não demonstra liderança em lucro: a base não traz custo das mercadorias, tributos, logística ou despesas comerciais por país.</p>
+        <div class="lucro-barras" id="lucro" role="group" aria-label="Faturamento por mercado e ausência de dados de lucro"></div>
+      </div>
+      <div class="lim-estoque" data-revela>
+        <p class="pergunta">Qual é o estoque por categoria?</p>
+        <p class="resposta">A média dos registros não revela o saldo disponível.</p>
+        <p class="lim-texto">A coluna Estoque Atual aparece em cada pedido, sem produto, loja ou data de posição. Ela permite uma média dos registros, não o estoque total, a cobertura, o giro ou a ruptura.</p>
+        <div class="pts" id="pts" role="group" aria-label="Estoque médio registrado por categoria: Calçados 277,43; Acessórios 276,97; Moda Infantil 276,20; Moda Feminina 275,04; Moda Masculina 272,03 unidades."></div>
+        <ul class="esquema" id="esquema" aria-label="Para medir saldo: produto, mais local, mais data de posição, igual a saldo disponível. Escolha um elemento para ver o que falta na base.">
+          <li><button type="button" data-e="produto" aria-pressed="false" aria-controls="esquema-txt">Produto</button></li><li class="op" aria-hidden="true">+</li><li><button type="button" data-e="local" aria-pressed="false" aria-controls="esquema-txt">Local</button></li><li class="op" aria-hidden="true">+</li><li><button type="button" data-e="data" aria-pressed="false" aria-controls="esquema-txt">Data de posição</button></li><li class="op" aria-hidden="true">=</li><li class="res"><button type="button" data-e="saldo" aria-pressed="false" aria-controls="esquema-txt">Saldo disponível</button></li>
+        </ul>
+        <p class="esquema-txt" id="esquema-txt" aria-live="polite">Escolha um elemento do esquema para ver o que falta na base.</p>
+      </div>
+    </div>
+    <p class="lim-ponte" data-revela>Por isso, uma das três decisões finais é estruturar os dados de estoque e integrar custos antes de automatizar compras ou reposição.</p>
+  </div>
+</section>
+
+<!-- ============ PREVISÃO ============ -->
+<section class="cap cap-escuro" id="previsao" data-cap="previsao" data-escuro aria-labelledby="h-previsao">
+  <div class="cont">
+    <header class="cap-cab" data-revela data-ponto>
+      <p class="cap-id">Previsão · análise preditiva</p>
+      <h2 id="h-previsao">Três meses à frente, <span class="seg-linha">com o método à vista.</span></h2>
+      <p class="cap-lead">A base termina em dezembro de 2024. Por isso o horizonte é janeiro a março de 2025, calculado por médias móveis.</p>
+    </header>
+    <div class="scrolly" id="sc-previsao">
+      <figure class="scrolly-graf" style="margin:0">
+        <div class="graf-cab">
+          <p class="graf-tit">Faturamento mensal<small>R$ · 2024 observado e jan–mar/2025 previsto · escala fixa</small></p>
+          <div class="seg" id="sel-mm" role="group" aria-label="Janela da média móvel">
+            <button type="button" data-v="3" aria-pressed="false">MM3</button>
+            <button type="button" data-v="6" aria-pressed="false">MM6</button>
+            <button type="button" data-v="12" aria-pressed="true">MM12</button>
+          </div>
+        </div>
+        <ul class="legenda"><li><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#F6F3EE" stroke-width="3"/></svg>Observado</li><li><svg width="26" height="10" aria-hidden="true"><line x1="0" y1="5" x2="26" y2="5" stroke="#FF6B42" stroke-width="3" stroke-dasharray="6 4"/></svg>Previsto (não é venda realizada)</li><li><svg width="26" height="10" aria-hidden="true"><rect width="26" height="10" fill="#6FC1B7" fill-opacity=".3"/></svg>Meses usados no cálculo</li></ul>
+        <div class="graf" id="g-prev" role="img"></div>
+        <div class="prev-lado">
+          <div class="prev-total"><span id="prev-rot">Total previsto · jan–mar/2025 · MM12</span><b id="prev-total">R$ 821.646,52</b></div>
+          <ul class="prev-meses" id="prev-meses" aria-label="Meses previstos. Escolha um para ver os meses usados no cálculo"></ul>
+          <p class="prev-calc" id="prev-calc" aria-live="polite">Escolha um mês previsto ou passe o mouse no gráfico para ver os meses usados no cálculo.</p>
+          <div class="erros" id="erros" aria-label="Erro histórico de cada janela"></div>
+        </div>
+      </figure>
+      <div class="scrolly-passos">
+        <article class="passo" data-passo="0" data-ponto>
+          <span class="passo-n">1 de 4 · Fronteira</span>
+          <h3>Os dados observados terminam em dezembro de 2024</h3>
+          <p>À esquerda da linha, vendas registradas. À direita, apenas projeção, sempre com traço tracejado.</p>
+        </article>
+        <article class="passo" data-passo="1" data-ponto>
+          <span class="passo-n">2 de 4 · Janeiro</span>
+          <h3>A média dos últimos <span data-k="k">12</span> meses</h3>
+          <p>Para janeiro de 2025, a <span data-k="mm">MM12</span> soma os <span data-k="k">12</span> últimos meses observados e divide por <span data-k="k">12</span>: <b class="d" data-k="jan">R$ 272.058,56</b>.</p>
+        </article>
+        <article class="passo" data-passo="2" data-ponto>
+          <span class="passo-n">3 de 4 · Fevereiro e março</span>
+          <h3>As previsões anteriores entram no cálculo</h3>
+          <p>A janela anda um mês: fevereiro usa a previsão de janeiro; março usa as de janeiro e fevereiro. Nenhum passo intermediário é arredondado.</p>
+        </article>
+        <article class="passo" data-passo="3" data-ponto>
+          <span class="passo-n">4 de 4 · Escolha do método</span>
+          <h3>Total previsto: <span data-k="total">R$ 821.646,52</span></h3>
+          <p>Entre as janelas testadas, a média dos últimos 12 meses apresentou o menor erro histórico. O MAPE é o tamanho médio do erro percentual nas previsões avaliadas: <b class="d" data-n="mape12">7,16%</b> em previsões de um mês à frente em 2024, não uma acurácia garantida para 2025.</p>
+        </article>
+      </div>
+    </div>
+    <details class="det">
+      <summary>Método completo e limites da previsão</summary>
+      <div class="det-corpo">
+        <ul>
+          <li>Validação: cada mês de 2024 foi previsto só com meses anteriores, avançando a origem mês a mês. MM3, MM6 e MM12 foram avaliadas nos mesmos 12 meses.</li>
+          <li>MAE = média de |observado − previsto|. MAPE = média de |observado − previsto| ÷ observado.</li>
+          <li>MM3 e MM6 são sensibilidade, não intervalos de confiança. Não há intervalo de confiança calculado.</li>
+          <li>O total soma valores sem arredondar; os meses exibidos podem somar R$ 0,01 a menos.</li>
+          <li>A MM12 também indica aproximadamente <span data-n="prevUn">7.418</span> unidades e <span data-n="prevPed">290</span> pedidos no trimestre, e receita <span data-n="prevQ1">5,71%</span> acima de jan–mar/2024.</li>
+          <li>A projeção é consolidada (todos os mercados e categorias) e não incorpora preços, campanhas ou expansão.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ EXPLORAR ============ -->
+<section class="cap explorar" id="explorar" data-cap="explorar" aria-labelledby="h-explorar">
+  <div class="cont">
+    <header class="cap-cab" data-revela data-ponto>
+      <p class="cap-id">Painel proposto · tomada de decisão</p>
+      <h2 id="h-explorar">Explorar os dados</h2>
+      <p class="cap-lead">O painel proposto no trabalho, calculado ao vivo a partir dos 2.250 pedidos. Combine período, mercado e categoria.</p>
+    </header>
+    <form class="filtros" id="filtros" aria-label="Filtros do painel">
+      <label class="filtro" for="f-ano">Período
+        <select id="f-ano"><option value="">2023–2024</option><option value="2023">2023</option><option value="2024">2024</option></select>
+      </label>
+      <label class="filtro" for="f-merc">Mercado
+        <select id="f-merc"><option value="">Todos os mercados</option></select>
+      </label>
+      <label class="filtro" for="f-cat">Categoria
+        <select id="f-cat"><option value="">Todas as categorias</option></select>
+      </label>
+      <button class="limpar" id="f-limpar" type="button">Limpar filtros</button>
+      <p class="recorte" id="recorte" aria-live="polite"></p>
+    </form>
+    <div id="ex-conteudo">
+      <div class="ex-kpis" id="ex-kpis"></div>
+      <div class="ex-grid">
+        <div class="ex-painel">
+          <p class="graf-tit" id="ex-serie-tit">Faturamento mensal</p>
+          <div class="graf" id="g-ex" role="img"></div>
+        </div>
+        <div class="ex-painel">
+          <div class="graf-cab" style="margin-bottom:.2rem">
+            <p class="graf-tit" id="ex-seg-tit">Participação na receita</p>
+            <div class="seg" id="sel-exseg" role="group" aria-label="Comparar por">
+              <button type="button" data-v="mercado" aria-pressed="true">Mercado</button>
+              <button type="button" data-v="categoria" aria-pressed="false">Categoria</button>
+            </div>
+          </div>
+          <div class="ex-seg" id="ex-seg"></div>
+        </div>
+      </div>
+    </div>
+    <div class="vazio" id="ex-vazio" hidden>Nenhum pedido neste recorte. Ajuste ou limpe os filtros.</div>
+    <p class="ex-nota"><b>Previsão:</b> a projeção de R$ 821.646,52 para jan–mar/2025 é consolidada e vinculada ao fechamento de 2024. Ela não muda com estes filtros.</p>
+  </div>
+</section>
+
+<!-- ============ DECISÕES ============ -->
+<section class="cap cap-escuro" id="decisoes" data-cap="decisoes" data-escuro aria-labelledby="h-decisoes">
+  <div class="cont">
+    <header class="cap-cab" data-revela data-ponto>
+      <p class="cap-id">Decisões · plano proposto</p>
+      <h2 id="h-decisoes">Três prioridades <span class="seg-linha">apoiadas nos dados.</span></h2>
+      <p class="cap-lead">Cada recomendação parte de um achado do percurso e define o que medir a seguir.</p>
+    </header>
+    <ol class="prioridades" data-revela>
+      <li><h3>Testar expansão comercial no Chile e na Colômbia</h3><p>Maior receita de 2024 e maior ticket no Chile; maior crescimento na Colômbia. <b>Medir:</b> margem e capacidade logística durante os pilotos.</p><a class="ev" href="#merc-conclusao">Ver a evidência ↑</a></li>
+      <li><h3>Revisar disponibilidade e sortimento de Moda Feminina e Calçados</h3><p>Sobem no ano e no trimestre recente. <b>Acompanhar:</b> os sinais mistos de Acessórios, Moda Infantil e Moda Masculina.</p><a class="ev" href="#sc-categorias">Ver a evidência ↑</a></li>
+      <li><h3>Estruturar dados de estoque e integrar custos</h3><p>Sem produto, local, data de posição e custos, não há saldo, giro ou lucro. <b>Organizar:</b> antes de automatizar decisões.</p><a class="ev" href="#limites">Ver a evidência ↑</a></li>
+    </ol>
+    <div class="plano" data-revela data-ponto>
+      <div class="plano-cab"><h3>Primeiros 90 dias</h3><span class="rotulo-plano">Plano proposto · não executado</span></div>
+      <ol class="etapas">
+        <li><b>Até 30 dias</b><span>Organizar dicionário de dados e cadastro de estoque por produto, local e data.</span><small>Equipe de dados e operações</small></li>
+        <li><b>31 a 60 dias</b><span>Executar pilotos no Chile e na Colômbia e revisar o sortimento de Moda Feminina e Calçados.</span><small>Comercial, marketing e gestão de categorias</small></li>
+        <li><b>61 a 90 dias</b><span>Avaliar os pilotos e atualizar as previsões com os novos meses observados.</span><small>Gestão e equipe de dados</small></li>
+      </ol>
+    </div>
+    <p class="fecho" data-revela>Os dados indicam prioridades. <em>Os próximos testes precisam medir sua viabilidade.</em></p>
+  </div>
+</section>
+</main>
+
+<footer class="rodape" id="rodape">
+  <div class="cont">
+    <div class="rod-grid">
+      <div>
+        <h2>Autoria</h2>
+        <dl>
+          <dt>Integrantes</dt><dd>Guilherme Perlasca, Marcelo Duarte, Thiago Roncoli, Daniel Chiaramonte, Henrique Souza, Filipe Brito e Diego Moreira</dd>
+          <dt>Instituição</dt><dd>UniRitter · Análise de Dados e Big Data</dd>
+          <dt>Professor</dt><dd>Andres Eberhard Friedl Ackermann</dd>
+        </dl>
+      </div>
+      <div>
+        <h2>Referências do relatório</h2>
+        <ul>
+          <li>HYNDMAN, R. J.; ATHANASOPOULOS, G. <i>Forecasting: principles and practice</i>. 3. ed. OTexts, 2021. <a href="https://otexts.com/fpp3/" target="_blank" rel="noopener">otexts.com/fpp3</a></li>
+          <li>CHANG, W. L.; GRADY, N. <i>NIST Big Data Interoperability Framework</i>: volume 1, definitions. NIST SP 1500-1r2, 2019. <a href="https://doi.org/10.6028/NIST.SP.1500-1r2" target="_blank" rel="noopener">doi.org/10.6028/NIST.SP.1500-1r2</a></li>
+          <li>Os 2.250 registros cabem em ferramentas convencionais: o estudo aplica análise de dados, sem necessidade de processamento distribuído.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Documentos</h2>
+        <ul><!--@@DOCS@@--></ul>
+      </div>
+    </div>
+    <div class="rod-fim">
+      <span>Fotografias: Pexels (licença Pexels), uso ilustrativo. Mapa: Natural Earth. Valores nominais em reais.</span>
+      <a href="#abertura">Voltar ao início ↑</a>
+    </div>
+  </div>
+</footer>
+
+<div class="ctrl" id="ctrl" hidden role="toolbar" aria-label="Controles da apresentação">
+  <button type="button" id="p-ant">← Anterior</button>
+  <span class="pos" id="p-pos" aria-live="polite">1 / 1</span>
+  <button type="button" id="p-prox">Próximo →</button>
+  <button type="button" id="p-tela">Tela cheia</button>
+  <button type="button" id="p-ajuda" aria-expanded="false" aria-controls="ajuda">?</button>
+  <button type="button" id="p-sair">Sair</button>
+</div>
+<p class="ajuda" id="ajuda" hidden>← → ou PageUp/PageDown passam pelos pontos da narrativa. A rolagem normal continua funcionando. Esc sai do modo.</p>
+
+<script>/*@@CALC@@*/</script>
+<script>/*@@APP@@*/</script>

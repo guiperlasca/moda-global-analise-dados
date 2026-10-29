@@ -1,0 +1,4 @@
+# O index.html já é gerado e versionado (python scripts/build.py); o Netlify só publica os arquivos.
+[build]
+  publish = "."
+  command = ""

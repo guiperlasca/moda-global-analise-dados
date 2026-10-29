@@ -1,0 +1,16 @@
+{
+  "name": "moda-global-apresentacao",
+  "private": true,
+  "description": "Site de apresentação do trabalho Moda Global (UniRitter, Análise de Dados e Big Data).",
+  "scripts": {
+    "dados": "python scripts/extrair_dados.py",
+    "build": "python scripts/build.py",
+    "test": "node --test tests/calculos.test.js",
+    "mapa": "node scripts/gerar_mapa.js",
+    "servir": "python -m http.server 8000"
+  },
+  "devDependencies": {
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2"
+  }
+}
